@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:h="jakarta.faces.html" xmlns:o="http://omnifaces.org/ui"
+    xmlns:of="http://omnifaces.org/functions"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <h:outputStylesheet name="css/stylesheet.css" />
+    <title>Stripesbook Contacts</title>
+</h:head>
+
+<h:body>
+    <div>
+        <header>
+        <h2>Stripesbook Contacts (${param.paramId})</h2>
+        </header>
+
+        <main> <h:panelGrid columns="2"
+            headerClass="table-header">
+            <f:facet name="header">
+                <h:outputText value="Contact information" />
+            </f:facet>
+
+            <h:outputLabel for="id" value="Id" />
+            <h:outputText id="id" name="id"
+                value="#{contactView.contact.id}" />
+
+            <h:outputLabel for="email" value="Email" />
+            <h:outputText id="email" name="email"
+                value="#{contactView.contact.email}" />
+
+            <h:outputLabel for="firstname" value="First name" />
+            <h:outputText id="firstname" name="firstname"
+                value="#{contactView.contact.firstName}" />
+
+            <h:outputLabel for="lastname" value="Last name" />
+            <h:outputText id="lastname" name="lastname"
+                value="#{contactView.contact.lastName}" />
+
+            <h:outputLabel for="phonenumber" value="Phone number" />
+            <h:outputText id="phonenumber" name="phonenumber"
+                value="#{contactView.contact.phoneNumber}" />
+
+            <h:outputLabel for="birthdate" value="Birthday" />
+            <h:outputText id="birthdate" name="birthdate"
+                value="#{contactView.contact.birthDate}" />
+        </h:panelGrid>
+
+        <hr />
+
+        <h:form>
+            <p>
+                <h:commandButton value="Delete"
+                    action="#{contactView.deleteContact()}">
+                    <f:param name="paramId" value="#{param.paramId}" />
+                </h:commandButton>
+            </p>
+        </h:form>
+
+        <p class="messages">
+            <h:messages />
+        </p>
+
+        <p>
+            <h:link value="Back to contact list"
+                outcome="/contactlist.xhtml?faces-redirect=true" />
+        </p>
+        </main>
+        <nav>Navigation goes here.</nav>
+        <footer>Footer goes here.</footer>
+    </div>
+</h:body>
+<!--
+<f:metadata>
+    <o:viewParam name="paramId" required="true"
+        value="#{ContactView.contact.id}" />
+</f:metadata>
+-->
+</html>

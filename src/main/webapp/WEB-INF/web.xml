@@ -7,7 +7,8 @@
 
     <context-param>
         <param-name>
-            jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+            jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL
+        </param-name>
         <param-value>true</param-value>
     </context-param>
 
@@ -38,27 +39,17 @@
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 
-<!--
-    <data-source>
-        <name>java:global/DataSourceContacts</name>
-        <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
-        <server-name>192.168.50.7</server-name>
-        <database-name>test</database-name>
-        <user>test</user>
-        <password>secret</password>
-    </data-source>
+    <!-- <data-source> <name>java:global/DataSourceContactsPG</name> <class-name>org.postgresql.ds.PGSimpleDataSource</class-name> 
+        <server-name>192.168.50.7</server-name> <database-name>test</database-name> 
+        <user>test</user> <password>secret</password> </data-source> -->
+
+    <!-- <data-source> <name>java:global/DataSourceContactsDropletPG</name> 
+        <class-name>org.postgresql.ds.PGSimpleDataSource</class-name> <server-name>146.190.149.101</server-name> 
+        <database-name>test</database-name> <user>test</user> <password>secret</password> 
+        </data-source> -->
 
     <data-source>
-        <name>java:global/DataSourceContactsDroplet</name>
-        <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
-        <server-name>146.190.149.101</server-name>
-        <database-name>test</database-name>
-        <user>test</user>
-        <password>secret</password>
-    </data-source>
--->
-    <data-source>
-        <name>java:global/DataSourceContactsH2</name>
+        <name>java:global/DataSourceContactsEmbedH2</name>
         <class-name>org.h2.jdbcx.JdbcDataSource</class-name>
         <url>jdbc:h2:/home/rusty/test</url>
         <user>sa</user>

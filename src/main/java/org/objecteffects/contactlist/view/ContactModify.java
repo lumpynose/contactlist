@@ -34,7 +34,7 @@ public class ContactModify implements Serializable {
     @ManagedProperty(value = "#{param.paramId}")
     private String paramId;
 
-    Contact contact;
+    private Contact contact;
 
     @PostConstruct
     public void init() {
@@ -61,8 +61,8 @@ public class ContactModify implements Serializable {
     }
 
     public String modifyContact() {
-        this.log.debug("modifyContact: paramId: {}, contact: {}", this.paramId,
-                this.contact);
+        this.log.debug("modifyContact: paramId: {}, contact: {}",
+                this.paramId, this.contact);
 
         this.contactService.mergeContact(this.contact);
 
